@@ -11,12 +11,17 @@
 <script src="https://fb.me/react-0.14.0.min.js"></script>
 <script src="https://fb.me/react-dom-0.14.0.min.js"></script>
 
-<script src="../browser.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
 <script src="../components/demo.jsx" type="text/jsx"></script>
 
-<script type="text/jsx">
-	var demo = React.createElement(demo);
-	React.render(demo, document.body);
+<script type="text/babel">
+	var HelloMessage = React.createClass({
+	  render: function () {
+	    return <h1>Hello {this.props.message}!</h1>;
+	  }
+	});
+
+	React.render(<HelloMessage message="World" />, document.body);
 </script>
 
 </body>
